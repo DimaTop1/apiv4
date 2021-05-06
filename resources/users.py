@@ -11,7 +11,7 @@ class UserRegister(Resource):
         args = parser.parse_args()
         if User.find_by_username(args['username']):
             return f"user {args['username']} already exists"
-        user = User(**user)
+        user = User(**args)
         user.add_user()
 
         return user.json(), 400

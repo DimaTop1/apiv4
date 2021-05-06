@@ -20,7 +20,7 @@ app.config['SECRET_KEY'] = 'super-secret'
 createtables()
 
 jwt = JWT(app, authenticate, identity)
-api = Api(app)
+
 
 api.add_resource(Item, '/items/<name>')
 api.add_resource(ItemList, '/items')
