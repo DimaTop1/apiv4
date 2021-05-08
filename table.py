@@ -1,5 +1,6 @@
 import sqlite3
 
+
 def createtables():
     connection = sqlite3.connect('data.db')
     cursor = connection.cursor()
