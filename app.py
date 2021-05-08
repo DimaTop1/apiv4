@@ -4,7 +4,7 @@ from flask_restful import reqparse, abort, Api, Resource
 from flask import Flask
 from flask_jwt import JWT
 from security import authenticate, identity
-from items import Item, ItemList
+from resources.items import Item, ItemList
 from resources.users import UserRegister
 from table import createtables
 from db import db

@@ -29,3 +29,5 @@ class User(db.Model):
     def add_user(self):
         db.session.add(self)
         db.session.commit()
+
+
