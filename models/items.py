@@ -9,12 +9,13 @@ class Items(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50))
     price = db.Column(db.Float)
+    store = db.Column(db.String(50))
 
     def __str__(self):
-        return "User(id='%s')" % self.id
+        return "Items(id='%s')" % self.id
 
     def json(self):
-        return{'name': self.name, 'price': self.price}
+        return{'name': self.name, 'price': self.price, 'store': self.store}
 
     @staticmethod
     def find_by_name(name):

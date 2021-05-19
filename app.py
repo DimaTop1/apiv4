@@ -1,11 +1,10 @@
 from flask import Flask, request, jsonify
 from flask_restful import reqparse, abort, Api, Resource
-
-from flask import Flask
 from flask_jwt import JWT
 from security import authenticate, identity
 from resources.items import Item, ItemList
 from resources.users import UserRegister
+from resources.stores import Store
 from table import createtables
 from db import db
 
@@ -25,5 +24,6 @@ jwt = JWT(app, authenticate, identity)
 api.add_resource(Item, '/items/<name>')
 api.add_resource(ItemList, '/items')
 api.add_resource(UserRegister, '/register')
+api.add_resource(Store, '/stores/<name>')
 
 app.run(debug=True)

@@ -11,5 +11,8 @@ def createtables():
     create_table_items = 'CREATE TABLE IF NOT EXISTS items (id INTEGER  PRIMARY KEY, name TEXT, price INTEGER)'
     cursor.execute(create_table_items)
 
+    create_table_stores = 'CREATE TABLE IF NOT EXISTS stores (id INTEGER PRIMARY KEY, name TEXT)'
+    cursor.execute(create_table_stores)
+
     connection.commit()
     connection.close()
